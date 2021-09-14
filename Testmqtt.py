@@ -1,9 +1,10 @@
 import paho.mqtt.client as mqtt
-
+import time
+import random
 def conectado(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
-    client.publish("mishuvasco@gmail.com/t2")
+    client.subscribe("mishuvasco@gmail.com/t2")
 
 def nuevoMensaje(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
